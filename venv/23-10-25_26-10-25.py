@@ -29,3 +29,33 @@ class Solution412:
         return output
 
 # 876 easy
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+class Solution:
+    def middleNode(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        a = head
+        output = []
+        count = 0
+        while a.next:
+            count += 1
+            a = a.next
+        half_count = int((count + 1) / 2) + 1
+
+        a = head
+        for i in range(half_count-1):
+            a = a.next
+        while a:
+            output.append(a.val)
+            a = a.next
+        fjaklesd = []
+        for index, i in enumerate(reversed(output)):
+            if index >= 1:
+                a = ListNode(i, fjaklesd[index-1])
+            else:
+                a = ListNode(i)
+            fjaklesd.append(a)
+        return a
+
