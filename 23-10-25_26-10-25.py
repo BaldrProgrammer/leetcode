@@ -1,4 +1,4 @@
-# 23.10.2025
+# 22.10.2025
 # 1342 easy
 class Solution1342:
     def numberOfSteps(self, n: int) -> int:
@@ -56,6 +56,7 @@ class Solution876:
         return a
 
 
+# 23.10.2025
 # 383 easy
 class Solution383:
     def canConstruct(self, ransomNote: str, magazine: str) -> bool:
@@ -67,4 +68,23 @@ class Solution383:
             return False
         else:
             return True
+
+
+# 3461 easy
+class Solution3461:
+    def hasSameDigits(self, s: str) -> bool:
+        new_digit = ''
+        while True:
+            for i in range(len(s) - 1):
+                new_digit += str((int(s[i]) + int(s[i + 1])) % 10)
+            if len(new_digit) == 2:
+                break
+            else:
+                s = new_digit
+                new_digit = ''
+
+        if int(new_digit[0]) == int(new_digit[1]):
+            return True
+        else:
+            return False
 
