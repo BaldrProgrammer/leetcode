@@ -1,3 +1,9 @@
+from typing import List, Optional
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+
 # 22.10.2025
 # 1342 easy
 class Solution1342:
@@ -87,4 +93,24 @@ class Solution3461:
             return True
         else:
             return False
+
+
+# 24.10.2025
+# 2048 medium
+class Solution2048:
+    def nextBeautifulNumber(self, n: int):
+        for i in range(n + 1, 9909999):
+            nums = set(str(i))
+            sovpadenie = 0
+            for ii in nums:
+                if str(i).count(ii) == int(ii):
+                    sovpadenie += 1
+                    print(ii, str(i).count(ii))
+                else:
+                    continue
+                print(i, sovpadenie)
+                print('')
+
+            if sovpadenie == len(nums):
+                return i
 
