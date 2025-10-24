@@ -136,7 +136,7 @@ class Solution2048:
 
 
 # 25.10.2025
-# 1 easy first way
+# 1 easy
 class Solution1:
     def twoSum(self, nums: List[int], target: int):
         for index, i in enumerate(nums):
