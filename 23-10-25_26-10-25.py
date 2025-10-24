@@ -96,7 +96,7 @@ class Solution3461:
 
 
 # 24.10.2025
-# 2048 medium
+# 2048 medium second way
 class Solution2048:
     def nextBeautifulNumber(self, n: int):
         for i in range(n + 1, 9909999):
@@ -114,3 +114,14 @@ class Solution2048:
             if sovpadenie == len(nums):
                 return i
 
+
+# 25.10.2025
+# 1 easy first way
+class Solution1:
+    def twoSum(self, nums: List[int], target: int):
+        for index, i in enumerate(nums):
+            nums2 = nums.copy()
+            nums2.pop(index)
+            for iindex, ii in enumerate(nums2):
+                if i + ii == target:
+                    return [index, iindex+1]
