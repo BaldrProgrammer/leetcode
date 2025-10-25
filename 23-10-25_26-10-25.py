@@ -147,6 +147,7 @@ class Solution1:
                     return [index, iindex + 1]
 
 
+# 26.10.2025
 # 1716 easy
 class Solution1716:
     def totalMoney(self, n: int) -> int:
@@ -165,3 +166,30 @@ class Solution1716:
                 dollar = week
                 day = 1
         return all_dollars
+
+
+# 13 easy
+# 25.10.2025
+class Solution13:
+    def romanToInt(self, s: str) -> int:
+        s = list(s)
+        values = {
+            'I': 1,
+            'V': 5,
+            'X': 10,
+            'L': 50,
+            'C': 100,
+            'D': 500,
+            'M': 1000
+        }
+        integer = 0
+        for index, i in enumerate(s):
+            if i == "I" or i == "X" or i == "C":
+                if not (index+1 == len(s)) and values[i] < values[s[index+1]]:
+                    integer += values[s[index+1]] - values[i]
+                    s.pop(index+1)
+                else:
+                    integer += values[i]
+            else:
+                integer += values[i]
+        return integer
