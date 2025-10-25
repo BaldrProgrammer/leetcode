@@ -145,3 +145,23 @@ class Solution1:
             for iindex, ii in enumerate(nums2):
                 if i + ii == target:
                     return [index, iindex + 1]
+
+
+# 1716 easy
+class Solution1716:
+    def totalMoney(self, n: int) -> int:
+        all_dollars = 0
+        week = 1
+        day = 1
+        dollar = 1
+        for i in range(n):
+            print(dollar)
+            all_dollars += dollar
+            dollar += 1
+            day += 1
+            if day == 8:
+                week += 1
+                print(week)
+                dollar = week
+                day = 1
+        return all_dollars
