@@ -100,7 +100,7 @@ class Solution3461:
 
 # 24.10.2025
 # 2048 medium first way
-class Solution:
+class Solution2048_1:
     def nextBeautifulNumber(self, n: int):
         nums = [1, 22, 122, 212, 221, 333, 1333, 3133, 3313, 3331, 4444, 14444, 22333, 23233, 23323, 23332, 32233,
                 32323, 32332, 33223, 33232, 33322, 41444, 44144, 44414, 44441, 55555, 122333, 123233, 123323, 123332,
@@ -117,7 +117,7 @@ class Solution:
 
 
 # second way
-class Solution2048:
+class Solution2048_2:
     def nextBeautifulNumber(self, n: int):
         for i in range(n + 1, 9909999):
             nums = set(str(i))
@@ -169,7 +169,6 @@ class Solution1716:
 
 
 # 13 easy
-# 25.10.2025
 class Solution13:
     def romanToInt(self, s: str) -> int:
         s = list(s)
@@ -193,3 +192,42 @@ class Solution13:
             else:
                 integer += values[i]
         return integer
+
+
+# 2241 medium
+class Bank2241:
+
+    def __init__(self, balance: List[int]):
+        self.balance = balance
+
+    def transfer(self, account1: int, account2: int, money: int) -> bool:
+        if account1 <= len(self.balance):
+            if account2 <= len(self.balance):
+                if self.balance[account1 - 1] >= money:
+                    self.balance[account1 - 1] = self.balance[account1 - 1] - money
+                    self.balance[account2 - 1] = self.balance[account2 - 1] + money
+                    return True
+                else:
+                    return False
+            else:
+                return False
+        else:
+            return False
+
+    def deposit(self, account: int, money: int) -> bool:
+        if account <= len(self.balance):
+            self.balance[account - 1] = self.balance[account - 1] + money
+            return True
+        else:
+            return False
+
+    def withdraw(self, account: int, money: int) -> bool:
+        if account <= len(self.balance):
+            if self.balance[account - 1] >= money:
+                self.balance[account - 1] = self.balance[account - 1] - money
+                return True
+            else:
+                return False
+        else:
+            return False
+
