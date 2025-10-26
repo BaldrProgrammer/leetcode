@@ -231,3 +231,10 @@ class Bank2241:
         else:
             return False
 
+
+# 26 easy
+class Solution26:
+    def removeDuplicates(self, nums: List[int]):
+        for i in nums:
+            for ii in range(nums.count(i) - 1):
+                nums.remove(i)
