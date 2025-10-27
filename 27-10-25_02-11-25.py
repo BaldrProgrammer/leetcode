@@ -1,5 +1,6 @@
 from typing import List
 
+
 # 27.10.2025
 # 136 easy
 class Solution136:
@@ -19,3 +20,9 @@ class Solution66:
         for i in str(number):
             digits.append(int(i))
         return digits
+
+
+# 344 easy
+class Solution344:
+    def reverseString(self, s: List[str]) -> None:
+        return s.reverse()
