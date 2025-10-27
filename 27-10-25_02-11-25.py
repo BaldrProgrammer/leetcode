@@ -35,3 +35,21 @@ class Solution344_2:
         for i in range(1, len(s)+1):
             s[i-1] = ss[-i]
         return s
+
+
+# 7 medium
+class Solution7:
+    def reverse(self, x: int) -> int:
+        xx = x
+        if x < 0:
+            xx = abs(x)
+        hui = list(str(xx))
+        hui.reverse()
+        result = int(''.join(hui))
+        if -2**31 <= result <= 2**31 - 1:
+            if x < 0:
+                return result - result - result
+            else:
+                return result
+        else:
+            return 0
