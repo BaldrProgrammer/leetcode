@@ -22,7 +22,16 @@ class Solution66:
         return digits
 
 
-# 344 easy
-class Solution344:
+# 344 easy first way
+class Solution344_1:
     def reverseString(self, s: List[str]) -> None:
         return s.reverse()
+
+
+# second way
+class Solution344_2:
+    def reverseString(self, s: List[str]) -> None:
+        ss = s.copy()
+        for i in range(1, len(s)+1):
+            s[i-1] = ss[-i]
+        return s
