@@ -72,26 +72,31 @@ class Solution:
             while True:
                 print(numes)
                 print(variant)
+                print(moving)
+                print(curr)
+                print('')
                 if sum(numes) == 0:
                     corrects += 1
                     break
-                if curr in range(0, len(numes)-1):
-                    if nums[curr] == 0:
-                        if moving == 'right':
-                            curr = curr + 1
-                            if numes[curr] > 0:
-                                numes[curr] -= 1
-                                moving = 'left'
-                        elif moving == 'left':
-                            curr = curr - 1
-                            if numes[curr] > 0:
-                                numes[curr] -= 1
-                                moving = 'right'
-                    else:
-                        if moving == 'right':
-                            curr += 1
-                        elif moving == 'left':
-                            curr -= 1
+                if numes[curr] == 0:
+                    if moving == 'right':
+                        curr += 1
+                    elif moving == 'left':
+                        curr -= 1
                 else:
+                    if moving == 'right':
+                        curr += 1
+                        moving = 'left'
+                    elif moving == 'left':
+                        moving = 'right'
+                        curr -= 1
+                if curr in range(0, len(numes)):
+                    if numes[curr] > 0:
+                        numes[curr] -= 1
+
+                else:
+                    print(curr)
+                    print(curr in range(0, len(numes) - 1))
+                    print(range(0, len(numes) - 1))
                     break
         return corrects
