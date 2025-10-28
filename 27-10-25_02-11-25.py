@@ -56,7 +56,7 @@ class Solution7:
 
 
 # 28.10.2025
-# 3354 easy NOT MY
+# 3354 easy NOT MINE
 class Solution3354(object):
     def countValidSelections(self, nums):
         total, ls, cases = sum(nums), 0, 0
