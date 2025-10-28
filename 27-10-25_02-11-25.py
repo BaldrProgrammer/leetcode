@@ -58,30 +58,40 @@ class Solution7:
 # 28.10.2025
 # 3354 easy
 class Solution:
-    def countValidSelections(self, nums: List[int]):
-        curr = nums.index(0)
-        print(curr)
-        moving = 'right'
-        while nums:
-            if curr in range(0, len(nums)-1):
-                if nums[curr] == 0:
-                    print(nums)
-                    print(curr)
-                    print(moving)
-                    if moving == 'right':
-                        curr = curr + 1
-                        if nums[curr] > 0:
-                            nums[curr] -= 1
-                            moving = 'left'
-                    elif moving == 'left':
-                        curr = curr - 1
-                        if nums[curr] > 0:
-                            nums[curr] -= 1
-                            moving = 'right'
+    def countValidSelections(self, nums: List[int]) -> int:
+        corrects = 0
+        variants = []
+        for index, i in enumerate(nums):
+            if i == 0:
+                variants.append((index, 'right'))
+                variants.append((index, 'left'))
+        for variant in variants:
+            curr = variant[0]
+            moving = variant[1]
+            numes = nums.copy()
+            while True:
+                print(numes)
+                print(variant)
+                if sum(numes) == 0:
+                    corrects += 1
+                    break
+                if curr in range(0, len(numes)-1):
+                    if nums[curr] == 0:
+                        if moving == 'right':
+                            curr = curr + 1
+                            if numes[curr] > 0:
+                                numes[curr] -= 1
+                                moving = 'left'
+                        elif moving == 'left':
+                            curr = curr - 1
+                            if numes[curr] > 0:
+                                numes[curr] -= 1
+                                moving = 'right'
+                    else:
+                        if moving == 'right':
+                            curr += 1
+                        elif moving == 'left':
+                            curr -= 1
                 else:
-                    if moving == 'right':
-                        curr += 1
-                    elif moving == 'left':
-                        curr -= 1
-            else:
-                return 0
+                    break
+        return corrects
