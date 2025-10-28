@@ -53,3 +53,35 @@ class Solution7:
                 return result
         else:
             return 0
+
+
+# 28.10.2025
+# 3354 easy
+class Solution:
+    def countValidSelections(self, nums: List[int]):
+        curr = nums.index(0)
+        print(curr)
+        moving = 'right'
+        while nums:
+            if curr in range(0, len(nums)-1):
+                if nums[curr] == 0:
+                    print(nums)
+                    print(curr)
+                    print(moving)
+                    if moving == 'right':
+                        curr = curr + 1
+                        if nums[curr] > 0:
+                            nums[curr] -= 1
+                            moving = 'left'
+                    elif moving == 'left':
+                        curr = curr - 1
+                        if nums[curr] > 0:
+                            nums[curr] -= 1
+                            moving = 'right'
+                else:
+                    if moving == 'right':
+                        curr += 1
+                    elif moving == 'left':
+                        curr -= 1
+            else:
+                return 0
