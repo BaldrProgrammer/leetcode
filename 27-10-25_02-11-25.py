@@ -89,3 +89,14 @@ class Solution3370_2:
         for i in outputs:
             if i >= n:
                 return i
+
+
+# 189 medium
+class Solution189:
+    def rotate(self, nums: List[int], k: int):
+        """
+        Do not return anything, modify nums in-place instead.
+        """
+        new_list = nums[-k:]
+        new_list += nums[0:len(nums) - k]
+        return new_list
