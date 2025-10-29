@@ -184,9 +184,9 @@ class Solution13:
         integer = 0
         for index, i in enumerate(s):
             if i == "I" or i == "X" or i == "C":
-                if not (index+1 == len(s)) and values[i] < values[s[index+1]]:
-                    integer += values[s[index+1]] - values[i]
-                    s.pop(index+1)
+                if not (index + 1 == len(s)) and values[i] < values[s[index + 1]]:
+                    integer += values[s[index + 1]] - values[i]
+                    s.pop(index + 1)
                 else:
                     integer += values[i]
             else:

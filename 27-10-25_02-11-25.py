@@ -111,3 +111,15 @@ class Solution189:
         for index, i in enumerate(new_list):
             nums[index] = i
         print(nums)
+
+
+
+# 283 easy
+class Solution283:
+    def moveZeroes(self, nums: List[int]) -> None:
+        """
+        Do not return anything, modify nums in-place instead.
+        """
+        for i in range(nums.count(0)):
+            nums.remove(0)
+            nums.append(0)
