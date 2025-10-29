@@ -79,3 +79,13 @@ class Solution3370_1:
             if '0' not in str(bin(i)).replace('0b', ''):
                 return i
 
+
+# second way
+class Solution3370_2:
+    def smallestNumber(self, n: int):
+        outputs = [
+            1, 3, 7, 15, 31, 63, 127, 255, 511, 1023, 2047,
+        ]
+        for i in outputs:
+            if i >= n:
+                return i
