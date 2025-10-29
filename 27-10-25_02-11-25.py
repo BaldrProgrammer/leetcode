@@ -32,8 +32,8 @@ class Solution344_1:
 class Solution344_2:
     def reverseString(self, s: List[str]) -> None:
         ss = s.copy()
-        for i in range(1, len(s)+1):
-            s[i-1] = ss[-i]
+        for i in range(1, len(s) + 1):
+            s[i - 1] = ss[-i]
         return s
 
 
@@ -46,7 +46,7 @@ class Solution7:
         hui = list(str(xx))
         hui.reverse()
         result = int(''.join(hui))
-        if -2**31 <= result <= 2**31 - 1:
+        if -2 ** 31 <= result <= 2 ** 31 - 1:
             if x < 0:
                 return result - result - result
             else:
@@ -69,3 +69,13 @@ class Solution3354(object):
                     cases += 1
             ls += nums[i]
         return cases
+
+
+# 29.10.2025
+# 3370 easy first way
+class Solution3370_1:
+    def smallestNumber(self, n: int):
+        for i in range(n, 1000):
+            if '0' not in str(bin(i)).replace('0b', ''):
+                return i
+
