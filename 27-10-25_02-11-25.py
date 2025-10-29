@@ -97,7 +97,17 @@ class Solution189:
         """
         Do not return anything, modify nums in-place instead.
         """
+        k = k % len(nums)
+        if k == 0:
+            return
+        while k > len(nums):
+            if len(nums) > 1:
+                k //= len(nums)
+            else:
+                k //= 2
         new_list = nums[-k:]
+        print(nums[-k])
         new_list += nums[0:len(nums) - k]
         for index, i in enumerate(new_list):
             nums[index] = i
+        print(nums)
