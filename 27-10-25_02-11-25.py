@@ -99,4 +99,5 @@ class Solution189:
         """
         new_list = nums[-k:]
         new_list += nums[0:len(nums) - k]
-        return new_list
+        for index, i in enumerate(new_list):
+            nums[index] = i
