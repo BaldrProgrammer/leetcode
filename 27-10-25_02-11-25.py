@@ -113,7 +113,6 @@ class Solution189:
         print(nums)
 
 
-
 # 283 easy
 class Solution283:
     def moveZeroes(self, nums: List[int]) -> None:
@@ -123,3 +122,14 @@ class Solution283:
         for i in range(nums.count(0)):
             nums.remove(0)
             nums.append(0)
+
+
+# 350 easy
+class Solution350:
+    def intersect(self, nums1: List[int], nums2: List[int]) -> List[int]:
+        output = []
+        for num in nums1:
+            if num in nums2:
+                nums2.remove(num)
+                output.append(num)
+        return output
