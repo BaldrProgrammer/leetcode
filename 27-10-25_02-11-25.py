@@ -123,7 +123,7 @@ class Solution283:
             nums.remove(0)
             nums.append(0)
 
-
+2
 # 350 easy
 class Solution350:
     def intersect(self, nums1: List[int], nums2: List[int]) -> List[int]:
