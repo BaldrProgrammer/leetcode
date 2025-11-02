@@ -133,3 +133,20 @@ class Solution350:
                 nums2.remove(num)
                 output.append(num)
         return output
+
+
+# 02.11.2025
+# 242 easy first way
+class Solution242:
+    def isAnagram(self, s: str, t: str) -> bool:
+        if len(s) == len(t):
+            t = list(t)
+            for i in s:
+                if i in t:
+                    t.remove(i)
+            if t != []:
+                return False
+            else:
+                return True
+        else:
+            return False
