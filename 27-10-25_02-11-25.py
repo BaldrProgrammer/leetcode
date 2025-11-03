@@ -171,3 +171,9 @@ class Solution14:
 
         return prefix
 
+# 28 easy
+class Solution28:
+    def strStr(self, haystack: str, needle: str) -> int:
+        if needle in haystack:
+            return haystack.index(needle)
+        return -1
