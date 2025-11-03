@@ -150,3 +150,24 @@ class Solution242:
                 return True
         else:
             return False
+
+
+# 14 easy
+class Solution14:
+    def longestCommonPrefix(self, strs: List[str]) -> str:
+        prefix = ''
+
+        for letter in max(strs):
+            for i in strs:
+                if not i.startswith(prefix):
+                    print(prefix)
+                    return prefix[:-1]
+            prefix += letter
+
+        for i in strs:
+            if not i.startswith(prefix):
+                print(prefix)
+                return prefix[:-1]
+
+        return prefix
+
