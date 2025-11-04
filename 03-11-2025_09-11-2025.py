@@ -23,7 +23,7 @@ class Solution169:
 
 # 171 easy
 class Solution:
-    def titleToNumber171(self, col: str) -> int:
+    def titleToNumber(self, col: str) -> int:
         letters = {
             'A': 1,
             'B': 2,
@@ -53,8 +53,9 @@ class Solution:
             'Z': 26
         }
         output = 0
-        for i in range(len(col) - 1):
-            output += 26 * letters[col[i]] * (i+1)
-        output += letters[col[-1]]
+        ite = list(range(len(col)))[::-1]
+        for i in ite:
+            print(i)
+            output += letters[col[ite.index(i)]] * (26 ** i)
         return output
 
