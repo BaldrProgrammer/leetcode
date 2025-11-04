@@ -59,3 +59,11 @@ class Solution:
             output += letters[col[ite.index(i)]] * (26 ** i)
         return output
 
+
+# 69 easy first way
+class Solution69:
+    def mySqrt(self, x: int) -> int:
+        return int(x ** 0.5)
+
+
+
