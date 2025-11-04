@@ -66,4 +66,10 @@ class Solution69:
         return int(x ** 0.5)
 
 
-
+# 125 easy
+class Solution:
+    def isPalindrome(self, s: str) -> bool:
+        s = [i for i in s.lower() if i in 'abcdefghijklmnopqrstuvwxyz']
+        if s == s[::-1]:
+            return True
+        return False
