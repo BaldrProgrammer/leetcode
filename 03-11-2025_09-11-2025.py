@@ -67,9 +67,9 @@ class Solution69:
 
 
 # 125 easy
-class Solution:
+class Solution125:
     def isPalindrome(self, s: str) -> bool:
-        s = [i for i in s.lower() if i in 'abcdefghijklmnopqrstuvwxyz']
+        s = [i for i in s.lower() if i in 'abcdefghijklmnopqrstuvwxyz0123456789']
         if s == s[::-1]:
             return True
         return False
