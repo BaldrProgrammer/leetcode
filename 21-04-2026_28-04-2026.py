@@ -18,3 +18,10 @@ class Solution35:
         set(nums)
         nums.append(target)
         return sorted(nums).index(target)
+
+
+# 21.04.2026
+# 58 easy
+class Solution58:
+    def lengthOfLastWord(self, s: str):
+        return len(s.strip().split(' ')[-1])
