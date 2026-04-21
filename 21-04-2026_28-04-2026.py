@@ -32,15 +32,24 @@ class Solution58:
 class Solution200:
     def numIslands(self, grid: List[List[str]]) -> int:
         number_of_islands = 0
-        try:
-            for spisok_index, spisok in enumerate(grid):
-                for yacheika_index, yacheika in enumerate(spisok):
-                    if yacheika == '1':
+        for spisok_index, spisok in enumerate(grid):
+            for yacheika_index, yacheika in enumerate(spisok):
+                if yacheika == '1':
+                    if spisok_index+1 >= len(grid) and yacheika_index+1 >= len(spisok):
+                        number_of_islands += 1
+                        continue
+                    elif spisok_index+1 >= len(grid):
+                        if spisok[yacheika_index + 1] == '0':
+                            number_of_islands += 1
+                            continue
+                    elif yacheika_index+1 >= len(spisok):
+                        if grid[spisok_index + 1][yacheika_index] == '0':
+                            number_of_islands += 1
+                            continue
+                    else:
                         if spisok[yacheika_index+1] == '0' and grid[spisok_index+1][yacheika_index] == '0':
                             number_of_islands += 1
-                            break
-        except:
-            number_of_islands += 1
+                            continue
 
         return number_of_islands
 
